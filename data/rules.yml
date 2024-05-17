@@ -1,0 +1,41 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- rule: Med List
+  steps:
+    - intent: list_medications
+    - action: utter_medication_list  
+
+- rule: Add Medication
+  steps:
+    - intent: add_medication
+    - action: utter_add_medication_prompt
+    - action: action_add_medication  
+
+- rule: List Medications - General
+  steps:
+    - intent: list_medications
+    - action: utter_medication_list
+
+- rule: About Disease
+  steps:
+    - intent: about_diseases
+    - action: utter_disease_description
+
+- rule: Notify Medication Taken
+  steps:
+    - intent: notify_medication_taken
+    - action: utter_medication_taken_confirmation
+    - action: Utter_medication_taken
+
+

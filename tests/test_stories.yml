@@ -1,0 +1,168 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy path 1
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      yes
+    intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      not really
+    intent: deny
+  - action: utter_goodbye
+
+- story: sad path 3
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      very terrible
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      no
+    intent: deny
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - user: |
+      are you a bot?
+    intent: bot_challenge
+  - action: utter_iamabot
+
+story: Test Add Medication - Successful
+  steps:
+  - user: i want to add a medication
+  - intent: add_medication
+  - action: utter_add_medication_prompt
+  - user: paracetamol
+  - action: action_add_medication  
+  - action: utter_medication_added
+
+story: Test Add Medication - Error
+steps:
+  - user: i want to add a medication
+  - intent: add_medication
+  - action: utter_add_medication_prompt  
+  - user: paracetamol
+  - action: action_add_medication 
+  - action: utter_medication_add_failed 
+
+story: Test List Medications - Empty List
+steps:
+  - user: what are my medications
+  - intent: list_medications
+  - action: utter_medication_list
+  - action: utter_no_medications_in_list
+
+story: Test List Medications - Populated List
+steps:
+  - user: what are my medications
+  - intent: list_medications
+  - action: utter_medication_list
+  - action: utter_your_medications_are  
+    - medication_list:  
+      - Ibuprofen
+
+story: Test List Specific Medication - Exists
+steps:
+  - user: show me my medication list for ibuprofen
+  - intent: list_medications
+  - slot:
+      entity: medication_name
+      value: ibuprofen
+  - rule: Med List Request with Slot 
+  - action: utter_specific_medication
+  - action: utter_medication_details
+
+story: Test List Specific Medication - Not Found
+steps:
+  - user: show me my medication list for penicillin
+  - intent: list_medications
+  - slot:
+      entity: medication_name
+      value: penicillin
+  - rule: Med List Request with Slot
+  - action: utter_specific_medication
+  - action: utter_medication_not_found
+
+story: Test About Disease - Successful
+steps:
+  - user: tell me about diabetes
+  - intent: about_diseases
+  - action: utter_about_disease 
+  - action: utter_disease_description
+
+story: Test About Disease - Error
+steps:
+  - user: tell me about a rare disease
+  - intent: about_diseases
+  - action: utter_about_disease
+  - action: utter_disease_info_unavailable 
+
+story: Test Medication Taken Notification
+steps:
+  - user: i have taken my medications today
+  - intent: notify_medication_taken
+  - action: utter_medication_taken_confirmation
+  - action: utter_medication_reminder_for_tomorrow 

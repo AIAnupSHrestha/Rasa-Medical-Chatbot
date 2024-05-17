@@ -1,0 +1,46 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Add Medication
+  steps:
+    - intent: add_medication
+    - action: utter_add_medication_prompt
+    - action: action_add_medication  
+
+- story: List Medications
+  steps:
+    - intent: list_medications
+    - action: utter_medication_list
+
+- story: About Disease
+  steps:
+    - intent: about_diseases
+    - action: utter_disease_description
+
+- story: Notify Medication Taken
+  steps:
+    - intent: notify_medication_taken
+    - action: utter_medication_taken_confirmation
+    - action: Utter_medication_taken

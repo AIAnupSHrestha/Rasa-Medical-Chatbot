@@ -1,0 +1,98 @@
+[
+  {
+    "text": "show me my medication list",
+    "intent": "list_medications",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.8555647730827332
+    }
+  },
+  {
+    "text": "what are my medications",
+    "intent": "list_medications",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.7646597623825073
+    }
+  },
+  {
+    "text": "list my medicines",
+    "intent": "list_medications",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.7893884181976318
+    }
+  },
+  {
+    "text": "can i see my medication list?",
+    "intent": "list_medications",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8024242520332336
+    }
+  },
+  {
+    "text": "tell me about [disease name]",
+    "intent": "about_diseases",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.8768884539604187
+    }
+  },
+  {
+    "text": "information on [disease name]",
+    "intent": "about_diseases",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9091519713401794
+    }
+  },
+  {
+    "text": "what is [disease name] like?",
+    "intent": "about_diseases",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9556971788406372
+    }
+  },
+  {
+    "text": "can you explain [disease name]?",
+    "intent": "about_diseases",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.46084001660346985
+    }
+  },
+  {
+    "text": "i have taken my medications today",
+    "intent": "notify_medication_taken",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.9635428786277771
+    }
+  },
+  {
+    "text": "i took all my meds",
+    "intent": "notify_medication_taken",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3309297561645508
+    }
+  },
+  {
+    "text": "medication completed for today",
+    "intent": "notify_medication_taken",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6044738292694092
+    }
+  },
+  {
+    "text": "meds taken for today",
+    "intent": "notify_medication_taken",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4939531683921814
+    }
+  }
+]
