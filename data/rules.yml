@@ -11,31 +11,20 @@ rules:
     - intent: bot_challenge
     - action: utter_iamabot
 
-- rule: Med List
+- rule: list medication names anytime the user ask
   steps:
     - intent: list_medications
     - action: utter_medication_list  
 
-- rule: Add Medication
+- rule: add medication name in the list anytime the user wants
   steps:
-    - intent: add_medication
-    - action: utter_add_medication_prompt
-    - action: action_add_medication  
+    - intent: add_medications
+    - action: utter_add_medications
 
-- rule: List Medications - General
-  steps:
-    - intent: list_medications
-    - action: utter_medication_list
 
-- rule: About Disease
+- rule: say about disease everytime user ask
   steps:
     - intent: about_diseases
     - action: utter_disease_description
-
-- rule: Notify Medication Taken
-  steps:
-    - intent: notify_medication_taken
-    - action: utter_medication_taken_confirmation
-    - action: Utter_medication_taken
 
 

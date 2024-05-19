@@ -3,79 +3,61 @@
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 3
-  },
-  "utter_medication_taken_confirmation": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
     "support": 1
   },
-  "utter_happy": {
-    "precision": 0.16666666666666666,
-    "recall": 1.0,
-    "f1-score": 0.2857142857142857,
-    "support": 1
-  },
-  "utter_about_disease": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "action_listen": {
-    "precision": 0.7272727272727273,
-    "recall": 0.5333333333333333,
-    "f1-score": 0.6153846153846153,
-    "support": 15
-  },
-  "utter_add_medication_prompt": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "action_add_medication": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1
-  },
-  "utter_did_that_help": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2
-  },
-  "utter_goodbye": {
+  "utter_add_medications": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 1
   },
-  "micro avg": {
-    "precision": 0.6190476190476191,
-    "recall": 0.5,
-    "f1-score": 0.5531914893617021,
-    "support": 26
+  "action_listen": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
   },
+  "utter_medication_list": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_medication_taken_confirmation": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "utter_disease_description": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1
+  },
+  "accuracy": 1.0,
   "macro avg": {
-    "precision": 0.3215488215488216,
-    "recall": 0.3925925925925926,
-    "f1-score": 0.3223443223443223,
-    "support": 26
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10
   },
   "weighted avg": {
-    "precision": 0.5798368298368298,
-    "recall": 0.5,
-    "f1-score": 0.5198647506339813,
-    "support": 26
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10
   },
-  "accuracy": 0.5,
+  "micro avg": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10
+  },
   "conversation_accuracy": {
-    "accuracy": 0.125,
-    "correct": 1,
+    "accuracy": 1.0,
+    "correct": 5,
     "with_warnings": 0,
-    "total": 8
+    "total": 5
   }
 }

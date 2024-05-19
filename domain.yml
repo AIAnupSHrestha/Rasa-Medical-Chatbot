@@ -3,30 +3,30 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
+  # - affirm
+  # - deny
   - bot_challenge
-  - add_medication
+  - add_medications
   - list_medications
   - about_diseases
   - notify_medication_taken
 
 entities:
-  - medication_name
+  - medication
 
 responses:
   utter_greet:
   - text: "Hey! How are you?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  # utter_cheer_up:
+  # - text: "Here is something to cheer you up:"
+  #   image: "https://i.imgur.com/nGF1K8f.jpg"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  # utter_did_that_help:
+  # - text: "Did that help you?"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  # utter_happy:
+  # - text: "Great, carry on!"
 
   utter_goodbye:
   - text: "Bye"
@@ -34,53 +34,51 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  utter_medication_added:
-  - text: "Medication added successfully!"
+  utter_add_medications:
+  - text: "Your medications is added in your medication list"
+
+  # utter_medication_added:
+  # - text: "Medication added successfully!"
 
   utter_medication_list:
   - text: "Here is your current medication list:"
 
-  utter_your_medications_are:
-  - text: "Here are your medications:"
-
-  Utter_disease_description:
+  utter_disease_description:
   - text: "Here is some information about [disease name]:"
 
-  Utter_medication_taken_confirmation:
+  # utter_about_disease:
+  # - text: "Here is some information about [disease name]:" 
+
+  utter_medication_taken_confirmation:
   - text: "That's great!"
 
-  Utter_medication_taken:
-  - text: "You're doing a fantastic job taking care of yourself!"
+  # Utter_medication_taken:
+  # - text: "You're doing a fantastic job taking care of yourself!"
 
 actions:
-  - utter_add_medication_prompt
+  - action_medication_names
+  - action_disease_details
   - action_add_medication
-  - utter_medication_added 
-  - utter_medication_add_failed 
-  - utter_medication_list
-  - utter_no_medications_in_list 
-  - utter_your_medications_are 
-  - utter_specific_medication 
-  - utter_medication_details
-  - utter_medication_not_found 
-  - utter_about_disease 
-  - utter_disease_description 
-  - utter_disease_info_unavailable 
-  - utter_medication_taken_confirmation
-  - utter_medication_reminder_for_tomorrow
 
+# slots:
+#   medication:
+#     type: text
+#     mappings:
+#       - type : entities
+#         entity: Atorvastatin
+
+#       - type : entities
+#         entity: Levothyroxine
+
+#       - type : entities
+#         entity: Lisinopril
 slots:
-  medication_name:
+  add_medications:
     type: text
+    influence_conversation: true
     mappings:
-      - type : entities
-        entity: Atorvastatin
-
-      - type : entities
-        entity: Levothyroxine
-
-      - type : entities
-        entity: Lisinopril
+    - type: from_entity
+      entity: medication
 
 session_config:
   session_expiration_time: 60
